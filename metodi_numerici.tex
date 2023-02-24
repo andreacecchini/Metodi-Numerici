@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{alltt, fancyvrb, url}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+% Questo commentalo se vuoi scrivere in inglese.
+\usepackage[italian]{babel}
+\usepackage[italian]{cleveref}
+% Intestazione degli appunti
+\author{Andrea Cecchini}
+\title{\textbf{Metodi Numerici per \\ L'intelligenza Artificiale.}}
+\date{\today}
+% Inizio del documento
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+% Section: Introduzione all'Analisi Numerica.
+\section{Introduzione all'Analisi Numerica.}
+\subsection{Analisi Numerica.}
+Introduciamo nel definire il compito dell'analisi numerica.
+%
+\begin{definition}[\textbf{Analisi Numerica}] L'Analisi Numerica e` la parte di matematica 
+%
+    che si occupa di dare una \textbf{risposta numerica} ad un problema matematico
+%
+    che modellizza un problema reale. 
+\end{definition}
+\subsubsection{Fasi della risoluzione di un problema numerico.}
+%
+Al fine di raggiungere tale problema, ci avvaliamo delle seguenti fasi:
+%
+\begin{itemize}
+    \item \textbf{Tradurre} il problema reale in un insieme di equazioni 
+%
+    matematiche in grado di descriverlo
+    \item \textbf{Trasformare} il problema matematica nel continuo in un 
+%
+    problema numerico discreto che sia risolubile.
+    \item \textbf{Trasportare}  il problema discreto in un calcolatore mediante 
+%
+    l’applicazione di algoritmi numerici capaci di determinare la soluzione 
+%
+    in un tempo ottimale.
+    \item \textbf{Interpretare e verificare} la soluzione numerica nei termini 
+%
+    della situazione reale e verificare così sia l’adeguatezza del modello 
+%
+    matematico sia l’efficienza dell’algoritmo risolutivo.
+\end{itemize}
+\subsubsection{Errori nel risolvere un problema numerico.}
+Nel percorso appena descritto vi possono essere numerevoli errori, 
+%
+le quali sorgenti sono:
+\begin{itemize}
+    \item \textbf{Errori nel modello matematico} Nascono da una cattiva 
+%
+    traduzione del problema reale a quello matematico, per esempio si 
+%
+    considerano alcune cose come trascurabili quando non lo sono.
+    \item \textbf{Errori nel modello numerico-computazionale} Vengono 
+%
+    descritti come errori di \textit{discretizzazione} o \textit{troncamento}.
+    \item \textbf{Errori presenti nei dati} Nati da uno strumento di
+%
+    misurazione fallace o da misurazioni che possono essere influenzate
+%
+    da errori sistematici.
+    \item \textbf{Errori di arrotondamento nei dati e nei calcoli} Sono 
+%
+    gli errori introdotti nella rappresentazone dei numeri sul calcolatore.
+\end{itemize}
+\newpage
+\subsection{Classificazione dei problemi numerici}
+\subsubsection{Problema numerico}
+\begin{definition}[\textbf{Problema Numerico}] Per \textbf{problema numerico}
+%
+    intendiamo una descrizione chiara di una \textbf{relazione funzionale}  
+%
+    tra i dati (\textbf{input}) e i risultati (\textbf{output}).
+\end{definition}
+In particolare, in un problema numerico abbiamo i seguenti elementi:
+\begin{itemize}
+    \item \textbf{F} rappresenta la relazione funzionale tra input ed output.
+    \item \textbf{x} rappresenta l’output della funzione di un determinato
+%
+    input.
+    \item \textbf{y} rappresenta il dato di input della relazione funzionale.
+\end{itemize}
+\subsubsection{Classificazione dei problemi numerici.} Descritti questi 
+%
+3 elementi, è possibile classificare il problema numerico in base a 
+%
+cosa stiamo cercando:
+\begin{itemize}
+    \item \textbf{Problema diretto} \textbf{F} e \textbf{x} sono dati,
+%
+    bisogna \textbf{trovare y}.
+    \item \textbf{Problema inverso} \textbf{F} e \textbf{y} sono dati,
+%
+    bisogna \textbf{trovare}.
+    \item \textbf{Problema di identificazione} \textbf{x} e \textbf{y} sono noti,
+%
+    bisogna trovare \textbf{F}.
+\end{itemize}
+Quest’ultimo problema è quello che interesserà di più durante il corso, 
+%
+perchè è proprio il problema numerico che l’intelligenza artificiale
+%
+cerca di risolvere.
+
+% End Section: Introduzione all'Analisi Numerica.
+\end{document}
