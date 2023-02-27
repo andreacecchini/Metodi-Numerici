@@ -1,6 +1,4 @@
 # Print all elements of a given list that are less then 5.
-import functools
-
 def filtered_list(l:range, f:filter) -> list:
     """A filtered list using f filter.
 
