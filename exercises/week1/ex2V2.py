@@ -2,7 +2,12 @@
 # restituisca una lista che contiene solo gli elementi che sono comuni 
 # tra le prime due liste (senza duplicati)
 
-def remove_duplicates(*lists:range) -> list:
+def remove_duplicates(*lists:list) -> list:
+    """Concatenate the list in lists and removing duplicates. 
+
+    Returns:
+        list: The concatenated and no duplicates list
+    """
     tmp=[]
     result=[]
     for l in lists:
