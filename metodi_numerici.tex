@@ -275,5 +275,140 @@ Nell'immagine qui sopra si elenca differenti proporzioni in cui
 si dovrebbe suddividere il set di dati che abbiamo nei subset 
 %
 descritti precedentemente.
+\subsection{Complessità dei dati}
+\topic{\textbf{Dimensionalità}}
+{
+    La \textbf{dimensionalità} di un dato rappresenta la 
+%
+    \textbf{densità} di quest'ultimo, ovvero la quantità.
+}
+\topic{\textbf{Complessità}} 
+{
+    Diremo che un dato è complesso se presenta una 
+%
+    \textbf{alta dimensionalità}. 
+}
+Dare al sistema di M.L. una mole spoporzionata di dati, come tutti
+%
+i pixel di un'immagine, non è una buona cosa.
+\\
+Se stessimo lavorando su un classificatore di immagini, sarebbe un
+%
+errore grave dargli dati ad alta dimensionalità, in quanto non 
+%
+riuscirebbe ad apprendere da così tanti dati \textbf{inutili}.
+\\ 
+La soluzione a questo problema si chiama \textbf{feature extraction}.
+\begin{center}
+    \includegraphics[scale=0.5]{images/Feature_extraction.png}
+\end{center}
+\subsubsection{Feature extraction}
+\topic{\textbf{Feature}}
+{
+    La \textbf{feature} srappresenta la parte più utile del dato 
+%
+    grezzo.
+}
+\topic{\textbf{Feature Expansion}}
+{
+    Rappresenta l'operazione di estrazione di features dal dato grezzo.
+\\ 
+    E' un modo per creare un nuovo e più piccolo insieme di dati 
+%
+    che cattura la maggiore parte dell'informazione dei dati grezzi.
+}
+\topic{\textbf{Feature Descriptor}}
+{
+    Un \textbf{featuer descriptor} rappresenta un vettore \(n\)
+%
+    dimensionale di feature numeriche che rappersentano qualche
+%
+    oggetto.
+}
+\begin{center}
+    \includegraphics[scale=0.5]{images/Feature_example.png}
+\end{center}
+\newpage
 \subsection{Machine Learning tasks}
+Il machine learning offre diversi \textbf{task} a seconda dell'output
+%
+che vogliamo
+\begin{itemize}
+    \item \textbf{Classificazione}
+    \item \textbf{Regressione}
+    \item \textbf{Clustering}
+\end{itemize}
+\subsubsection{Classificazione}
+\topic{\textbf{Classe}}
+{
+    Una classe è un \textbf{set di dati con proprietà comuni}.
+\\ 
+    Il concetto di classe è correlato al concetto di ``etichetta''.
+}
+\topic{\textbf{Classificazione}}
+{
+    Dato un input specifico, il modello (\textbf{classificatore})
+%
+    emette una \textbf{classe}.
+}
+\begin{itemize}
+    \item Se ci sono 2 classi, chiamiamo il problema come 
+%    
+    \textbf{problema di classificazione binaria}
+    \item Se ci sono \( n \) classi con \( n > 2\), chiamiamo il 
+%
+    problema come \textbf{problema di classificazione multiclasse}.
+\end{itemize}
+\subsubsection{Regressione}
+\topic{\textbf{Regressione}}
+{
+    La \textbf{relazione} viene utilizzata per \textbf{modellare la 
+%    
+    relazione} tra le variabili indipendenti e le variabili dipendenti. 
+}
+Quindi la regressione si occupa di risolvere un \textbf{problema
+%
+di identificazione}.
+\topic{\textbf{Regressione MultiVariata}}
+{
+    La \textbf{regressione multivariata} prevede l'impiego di più
+%
+    variabili in gioco rispetto alla classica regressione lineare.
+}
+\newpage
+\subsubsection{Clustering}
+\topic{\textbf{Clustering}}
+{
+    Il \textbf{clustering} permette di identificare dei gruppi
+%
+    di dati in classi, senza saper a priori le classi.
+}
+Il clustering è spesso applicato, infatti, in un ambiente di 
+%
+apprendimento non supervisionato, in cui le classi del problema
+%
+non sono noti a priori.
+% Aggiungere immagini
+\subsection{Loss Function}
+Facciamo una picolissima diramazione di poche righe per spiegare 
+%
+il concetto di \textbf{loss function}.
+\topic{\textbf{Loss Function}}
+{
+    La \textbf{loss function} (funzione di perdita) è un indicatore
+%
+    che permette di descrivere la  qualità dell'apprendimento del 
+%
+    sistema.
+}
+Al fine di aver un sistema che appreso in maniera esaustiva, 
+%
+bisogna far tendere verso il basso il valore della \textbf{loss 
+%
+function}.
+\subsection{Tipi di apprendimento}
+\subsubsection{Apprendimento supervisionato}
+\subsubsection{Apprendimento non supervisionato}
+\subsubsection{Apprendimento con rinforzo}
 \end{document}
+ 
