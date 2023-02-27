@@ -1,4 +1,6 @@
-def less_then_five(l:list) -> list:
+# Print all elements of a given list that are less then 5.
+
+def less_then_five(l:range) -> list:
     """Return a list of elements less then 5.
 
     Args:
@@ -10,4 +12,4 @@ def less_then_five(l:list) -> list:
     return [num for num in l if num < 5]
 
 
-print(less_then_five([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+print(less_then_five(list(range(1, 10))))
