@@ -81,7 +81,7 @@ In particolare, in un problema numerico abbiamo i seguenti elementi:
 \begin{itemize}
     \item \textbf{F} rappresenta la relazione funzionale tra input ed output.
     \item \textbf{x} rappresenta il dato di input della relazione funzionale.
-    \item \textbf{y} rappresenta l’output della funzione di un determinato input
+    \item \textbf{y} rappresenta l’output dell<a funzione di un determinato input
 \end{itemize}
 \subsubsection{Classificazione dei problemi numerici.} Descritti questi 
 %
@@ -121,5 +121,157 @@ cerca di risolvere.
 % End Section: Introduzione all'Analisi Numerica.
 \newpage
 \section{Introduzione all'Intelligenza artificiale}
-
+\topic{\textbf{Intelligenza Artificiale}}
+{
+    Per \textbf{intelligenza artificiale} si intende una parziale 
+%
+    riproduzione dell'attività intellettuale propria dell'uomo.
+}
+Esistono due tipi di intelligenze artificiali, basate sul loro 
+%
+dominio applicativo:
+\begin{itemize}
+    \item \textbf{Intelligenza artificiale ``debole``}:
+    Sono dei sistemi basati per risolvere \textbf{problemi specifici.}
+    \item \textbf{Intelligenza artificiale ``forte``}:
+    Sono dei sistemi in grado di replicare \textbf{tutte le funzioni cognitive}
+%
+    dell'essere umano. Spesso per riferirci a questa categoria useremo il termine
+%
+    \textbf{``Intelligenza Generalista``}.
+\end{itemize}
+Molti tendono a confondere e a non capire il legame tra \textbf{intelligenza artificiale},
+%
+,\textbf{machine learning} e \textbf{deep learning}.
+\\
+Rappresenteremo il loro legame attraverso il seguente diagramma di Venn:
+% Aggiungere immagine
+Detto ciò, capiamo cosa cambia grazie all'utilizzo di questa tecnologia.
+\subsection{Cambio di paradigma di programmazione}
+\subsubsection{Paradigma classico}
+\begin{center}
+    \includegraphics[scale=0.7]{images/Paradigma_Classico.png}
+\end{center}
+Il paradigma sul quale noi siamo abituare a creare programmi è
+%
+il seguente:
+\begin{itemize}
+    \item Il \textbf{programmatore} elabora e crea un 
+%   
+    \textbf{algoritmo} (programma).
+    \item All'algoritmo vengono forniti dei dati come \textbf{input}.
+    \item L'elaboratore computa l'input sulla base dell'algoritmo
+%
+    e fornisce un output.
+\end{itemize}
+Questo modo di agire prevede una forte presenza dell'essere umano,
+%
+il quale in veste di programmatore, crea l'algoritmo voluto. 
+\subsubsection{Paradigma del Machine Learning}
+\begin{center}
+    \includegraphics[scale=0.7]{images/Paradigma_del_ML.png}
+\end{center}
+In questo paradigma il ruolo dell'uomo viene ``sostituito'' dalla
+%
+tecnica del \textbf{Machine Learning}.
+\topic{Machine Learning}
+{
+    Sistema in grado di apprendere automaticamente da esempi 
+%
+    specifici (\textbf{training data}) e di generalizzare la 
+%
+    conoscenza su nuovi campioni (\textbf{test data}) dello stesso
+%
+    dominio
+}
+Difatti, il machine learning dato input ed output, procede nella
+%
+risoluzione del problema di identificazione.
+\\
+Andiamo ad analizzare le diverse fasi di questo paradigma:
+\\  
+\begin{center}
+    \includegraphics[scale=0.7]{images/Paradigma_ML_fasi.png}
+\end{center}
+\begin{itemize}
+    \item \textbf{Acquisizione dati} I dati sono l'elemento base
+%
+    di tutte le applicazioni di M.L.. E' molto importante quindi
+    sapere come acquisire questi dati.
+    \item \textbf{Data processing} I dati raccolti nella fase 
+%
+    precedente vengono processati al fine da attarli al meglio al 
+%
+    al modello M.L. che intendiamo sviluppare.
+    \item \textbf{Modello} Insieme di techiche matematiche e 
+%
+    statistiche in grado di apprendere da una certa distribuzione di 
+%
+    dati.
+    \item\textbf{Predizione} Una volta ottenuto il modello è 
+% 
+    possibile ``predire'' l'output correlato ad un certo input non 
+%
+    presentato nel training data.
+\end{itemize}
+\newpage
+\subsection{I dati}
+\subsubsection{Acquisizione dei dati}
+E' possibile ottenere i dati in due modi:
+\begin{itemize}
+    \item Usare set di dati pubblici: sono presenti molte
+%
+    piattaforme, come \href{https://www.kaggle.com/datasets}{kaggle}.
+    \item Acquisento un nuovo set di dati.
+\end{itemize}
+E' molto  comune nel mondo della ricerca di fornire questi set di 
+%
+dati pubblici, in modo altruista.
+\\
+Visto ciò, non usarli sarebbe un peccato.
+\subsubsection{Annotazione dei dati}
+\topic{Etichetta}
+{
+    Annotare i dati vuol dire assegnare un \textbf{etichetta} 
+%    
+    (output) ad una determinata istanza di input.
+%
+    L'etichetta rappresenta il contenuto semantico dei dati.
+}
+Diremo quindi che un dato è \textbf{annotato} se associato ad una 
+%
+\textbf{etichetta}.
+\\
+I dati non annotati sono spesso \textbf{inutili}.
+Tuttavia, grazie alla tecnica di apprendimento 
+%
+\textbf{non supervisionata} (vedremo dopo) è possibile comunque 
+%
+estrarre conoscenza da essi.
+\subsubsection{Organizzazione dei dati}
+Bisogna \textbf{organizzare} i dati come segue: 
+\begin{itemize}
+    \item \textbf{Training set} sono i dati sui quali il modello 
+%
+    apprende automaticamente durante la fase di apprendimento.
+    \item \textbf{Validation set} sottoinsieme del training set, 
+%
+    sono i dati con il quali si informa il sistema della 
+%
+    validazione del suo apprendimento.
+    \item \textbf{Testing set} dati con il quali si testa il 
+%
+    modello. Questa fase verifica l'efficacia del modello, anche
+%
+    attraverso misure numberiche qualitative e quantitative.
+\end{itemize}
+\begin{center}
+    \includegraphics[scale=0.7]{images/Organizzazione_dei_dati.png}
+\end{center}
+Nell'immagine qui sopra si elenca differenti proporzioni in cui 
+%
+si dovrebbe suddividere il set di dati che abbiamo nei subset 
+%
+descritti precedentemente.
+\subsection{Machine Learning tasks}
 \end{document}
