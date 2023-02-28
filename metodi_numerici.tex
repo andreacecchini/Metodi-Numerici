@@ -410,5 +410,144 @@ function}.
 \subsubsection{Apprendimento supervisionato}
 \subsubsection{Apprendimento non supervisionato}
 \subsubsection{Apprendimento con rinforzo}
+\newpage
+% Section: Artificial Neural Networks
+\section{Artificial Neural Networks}
+\subsection{Ispirazione dal modello umano}
+Il paradigma delle rete neurale artificiali e` ispirato al modo in cui il sistema 
+%
+nervoso biologio elabora le informazioni.
+\\
+L'unita` elementare del nostro sistema nervoso si chiama \textbf{Neurone}.
+\begin{center}
+    \includegraphics[scale=0.5]{images/Neurone.png}
+\end{center}
+Le parti piu` importanti di un neurone sono:
+\begin{itemize}
+    \item \textbf{Dentriti} sono i canali di ricezione dell'input proveniente 
+%
+    da altri neuroni.
+    \item \textbf{Soma} E la parte "core" del neurone.
+\\
+    Essa elabora l'input nel tempo e converte il valore elaborato in output.
+    \item \textbf{Assone} Rappresenta il canale di trasferimento dell'ouput.
+\\
+    L'assone trasferisce l'informazione elaborato dal soma ad altri neuroni.
+    \item \textbf{Sinapsi} sono le estremita` dell'assone, le quali funzionano 
+%
+    come dei ganci verso i dentriti di altri neuroni.
+\end{itemize}
+Quando il some riceve segnali in ingresso, e se quest'ultimi superano una certa 
+%
+\textbf{soglia}, viene prodotto un segnale di uscita sull'assone che diventera`
+%
+un segnale di input per altri neuroni.
+\textbf{Il valore di questa soglia e l'efficienza chimica di trasmissione delle 
+%
+sinapsi sono strettamente legate ai processi di apprendimento.}
+Nella testa l'indicatore \textbf{wtf-per-minute} sara` andato alle stelle con
+%
+questa lezione di bioologia, ma non vi preoccupate, rispetto a dopo e` ancora basso.
+\subsection{Neurone artificiale}
+Le reti neurali sono un tentativo dell'uomo di creare una rappresentazione 
+%
+informatica del nostro sistema nervoso.
+L'elemento base di esso, ovvero neuroni, vengono usati come caso di studio e base
+%
+comportamentale per la creazione dell'elemento base delle reti neurali: il 
+\textbf{Neurone artificiale}.
+\\
+La prima rivisitazione rappresenta le basi di rappesentazione dei segnali di 
+%
+ingresso e uscita.
+\\
+Tali segnali verranno rappresentati in binario.
+\\
+Il primo modello di neurone artificiale, create da McCulloch e Pitts, e` in grado di eseguire
+computazioni logiche dato dei segnali di input.
+\begin{center}
+    \includegraphics[scale=0.4]{images/Neurone_artificiale.png}
+\end{center}
+L'indicatore wtf-per-minute si e` alzato, almeno nella mia testa, quindi cerchiamo
+%
+di svelare il mistero nel geroflifico.
+\\
+Per prima cosa andiamo ad analizzare i vari attore presenti nel disegno superiore:
+\begin{itemize}
+    \item \( \mathbf{i}\) rappresenta \textbf{l'identificativo del neurone corrente}.
+    \item \( \mathbf{in_j} \) con  \(j<=d\) rappresenta il 
+%    
+    \textbf{segnale di ingresso i-esimo}.
+    \item \( \mathbf{w_{ji}} \) rapprensenta il \textbf{peso} 
+%
+    (approssimiamolo con il termine ``\textbf{importanza}'' per ora) di un 
+%
+    certo segnali di input.
+\\
+    Vale a dire che \(w_{1i}\) sara` il peso assegnato al primo segnale di
+%   
+    ingresso del neurone i. 
+    \item \( in_0 \ e\  w_{0i} \) vengono denominato come \textbf{bias}, ovvero 
+%
+    del \textbf{peso} collegato ad un \textbf{input fittizio \(in_0=1\)}.
+\\  
+    La sua utilita` sta nel \textbf{calibrare} il punto ottimale di lavoro di un 
+%
+    neurone.
+    \item \( \mathbf{net_i} \) e` il \textbf{livello di eccitazione} del neurone 
+%
+    i-esimo.
+\\
+    Avremo che \( \mathbf{net_i = \sum_{j=0}^{d}{w_{ji} * in_j + w_{0i}} } \) dove 
+%
+    \( \mathbf{w_{ji} * in_j} \) rappesenta il segnale di ingresso nella sua 
+%
+    totalita` (considerando cosi` il suo peso).
+\\ 
+    Nella sommatoria troviamo anche la somma \( w_{0i} \), ovvero il bias utile 
+%
+    per tarare.
+    \item \( \mathbf{f()} f) \) e` la \textbf{funzine di attivazione} che determina il 
+%
+    comportamento di un neurone. 
+\\ 
+    Esamineremo dopo i dettagli di questa funzione.
+%
+    Avremo che \( \mathbf{out_i = f(net_i)} \).
+\end{itemize}
+Visto che risulta essere ancora abbastanza completato capiamo il flusso 
+\topic{\textbf{Vengono acquisiti i vari segnali}}
+{
+    I vari segnali in ingresso vengono acquisiti e trasportati nella "soma" 
+    artificiale.
+}
+\topic{\textbf{I segnali vengono ``pesati''}}
+{
+    Ad ogni segnali in ingresso corrisponde un certo peso.
+}
+\topic{\textbf{Si calcola il livello di eccitazione}}
+{
+    Si calcola l'eccitazione del neurone sommando tutti i segnali di ingresso 
+%
+    moltiplicati per il loro rispettivo peso, sommati a loro volta al bias.
+}
+\topic{\textbf{La funzine di attivazione calcola l'output}}
+{
+    In base al livello di eccitazione del neurone la funzione di attivazione 
+% 
+    calcola l'output.
+\\
+    Se \(net_i > soglia\) allora viene prodotto un output, altrimenti ne viene 
+%
+    prodotto un altro.
+}
+\subsection{Funzione di attivazione}
+Abbiamo osservato come la \textbf{funzione di attivazione} trasforma il livello di 
+eccitazione del neurone in un plausibile output.
+Facciamo un esempio allora:
+\[F(net_i)=\begin{cases}
+    1 \ se\ net_i>soglia \\
+    -1 \ se\ net_i<soglia \\
+\end{cases}\] 
 \end{document}
  
