@@ -326,7 +326,7 @@ La soluzione a questo problema si chiama \textbf{feature extraction}.
     oggetto.
 }
 \begin{center}
-    \includegraphics[scale=0.5]{images/Feature_example.png}
+    \includegraphics[scale=2]{images/Feature_example.png}
 \end{center}
 \newpage
 \subsection{Machine Learning tasks}
@@ -389,30 +389,97 @@ apprendimento non supervisionato, in cui le classi del problema
 %
 non sono noti a priori.
 % Aggiungere immagini
-\subsection{Loss Function}
-Facciamo una picolissima diramazione di poche righe per spiegare 
-%
-il concetto di \textbf{loss function}.
-\topic{\textbf{Loss Function}}
-{
-    La \textbf{loss function} (funzione di perdita) è un indicatore
-%
-    che permette di descrivere la  qualità dell'apprendimento del 
-%
-    sistema.
-}
-Al fine di aver un sistema che appreso in maniera esaustiva, 
-%
-bisogna far tendere verso il basso il valore della \textbf{loss 
-%
-function}.
 \subsection{Tipi di apprendimento}
+E` possibile ragruppare i vari tipi di apprendimento di un algoritmo di machine 
+%
+learning in base all'effetivo convolgimento dell'attività umana.
 \subsubsection{Apprendimento supervisionato}
+\topic{\textbf{Apprendimento Supervisionato}}
+{
+    Nell'\textbf{apprendimento supervisionato} i \textbf{training data} dati 
+%
+    come input dell'algoritmo di machine learning sono \textbf{annotati}.
+}
+Esempi di tasks di machine learning dove si utilizza un sistema supervisionato 
+%
+sono la \textbf{classificazione} e la \textbf{regressione}.
+\\ 
+Per quanto riguarda la classificazione, un esempi molto chiaro e` lo 
+%
+\textbf{spam filter}: l'algoritmo di machine learning e` allenato con un 
+%
+training set di esempi di email, indicando quali sono e non sono spam.
 \subsubsection{Apprendimento non supervisionato}
+\topic{\textbf{Apprendimento non Supervisionato}}
+{
+    Nell'\textbf{apprendimento non supervisionato} i \textbf{training data} dati 
+%
+    come input dell'algoritmo di machine learning non sono \textbf{annotati}.
+}
+Un esempio di task di machine learning dove si utiilizza un sistema non 
+%
+supervisionato e` proprio il \textbf{clustering}.
+%
+\\
+Immaginiamo di avere un bel blog alla Ferragni.
+\\
+Abbiamo quindi una quantita` di dati riguardanti i visitatori del blog
+%
+sufficientemente alta per allenare il nostro algoritmo di machine learning.
+%
+Quello che vogliamo e` ragruppare i nostri visitatori, i quali inizialmente non 
+%
+sono annotati, in diverse classi.
+Quindi, partendo da dei dati \textbf{non annotati} ed utilizzando un sistema di 
+%
+\textbf{apprendimento non supervisionato}, siamo riusciti ad annotare i nostri 
+%
+dati ed a ragrupparli in diverse classi.
+\subsubsection{Apprendimento semi-supervisionato}
+\topic{\textbf{Apprendimento semi-supervisionato}}
+{
+    Nell'\textbf{apprendimento semi-supervisionato} ci si affaccia con un 
+%
+    \textbf{training set parzialmente annotato}, usualmenta tanti dati non 
+%
+    annotati e pochi annotati.
+}
+Un esempio di apprendimento semi-supervisionato e` il servizio offerto da 
+%
+\textbf{Google Photos}: una volta caricate delle foto di famiglia sul cloud di 
+%
+google, e` possibile sapere in quali foto e` comparso un determinato parente.
+L'unica cosa che serve al sistema e` un'annotazione sulle foto iniziali, non su 
+tutte, del nome del parente.
+Dalle foto successive il sistema sara` in grado di eseguire del clustering all'
+%
+interno di foto, quindi assegnare classi a dati non annotati. 
 \subsubsection{Apprendimento con rinforzo}
+\topic{\textbf{Apprendimento con rinforzo}}
+{
+    Il sistema di apprendimento, chiamato \textbf{agent} in questo contesto, 
+%
+    seleziona ed esegue delle azioni, ottenendo un \textbf{feedback positivo}  o \textbf{negativo} 
+%
+    sull'azione svolta.
+\\
+    Il sistema deve apprendere da solo quale e` la migliore strategia, chiamata 
+%
+    \textbf{policy}, al fine di massimizzare il numero di feedback positivi
+%
+    , di ridurre invece i negativi, in \textbf{funzione del tempo}.
+}
+Fun fuct, l'apprendimento con rinforzo e` il tipo di apprendimento che un 
+%
+bambino effettua: le cose che impara le impara effettuando delle azioni dalle 
+%
+quali ricevera` un feedback dai propri genitori.
 \newpage
 % Section: Artificial Neural Networks
 \section{Artificial Neural Networks}
+Le \textbf{Artificial Neural Networks (A.N.N.)} sono il vero punto centrale 
+%
+\textbf{Deep Learning}.
 \subsection{Ispirazione dal modello umano}
 Il paradigma delle rete neurale artificiali e` ispirato al modo in cui il sistema 
 %
@@ -448,6 +515,7 @@ sinapsi sono strettamente legate ai processi di apprendimento.}
 Nella testa l'indicatore \textbf{wtf-per-minute} sara` andato alle stelle con
 %
 questa lezione di bioologia, ma non vi preoccupate, rispetto a dopo e` ancora basso.
+\newpage
 \subsection{Neurone artificiale}
 Le reti neurali sono un tentativo dell'uomo di creare una rappresentazione 
 %
@@ -457,20 +525,89 @@ L'elemento base di esso, ovvero neuroni, vengono usati come caso di studio e bas
 comportamentale per la creazione dell'elemento base delle reti neurali: il 
 \textbf{Neurone artificiale}.
 \\
-La prima rivisitazione rappresenta le basi di rappesentazione dei segnali di 
+Il primo modello di neurone artificiale, create da McCulloch e Pitts, e` in grado 
 %
-ingresso e uscita.
+di eseguire computazioni logiche dato dei segnali di input.
+%
+Tale modello riceve e rilascia negnali di tipo \textbf{binario}, banalmente 
+%
+\textbf{Vero} o \textbf{Falso}.
+%
+Immaginiamo ora di avere delle reti neurali, composte da un 
+%
+\textbf{layer di input e uno di output}, le quali eseguono delle 
+%
+computazioni  logiche, assumendo che il neurone di output viene attivato (raggiunge la
+%
+\textbf{soglia di eccitazione}) quando almeno 2 dei suoi input sono attivati.
 \\
-Tali segnali verranno rappresentati in binario.
+Per \textbf{layer di neuroni} intendiamo, al momento, un'insieme di neuroni 
+%
+posti sullo stesso livello. Vedremo dopo in dettaglio.
+%
+\begin{center}
+    \includegraphics[scale=0.7]{images/Logical_Computation_With_Neurons.png}
+\end{center}
+%
+Le computazioni logiche sono le seguenti:
+\begin{itemize}
+    \item \textbf{C = A}: se il neurone di input \textbf{A si attiva}, il neurone 
+%
+    \textbf{C} riceve due input e \textbf{si attiva}
+    \item \textbf{C = A AND B}: Sia il neurone \textbf{A} che il neurone 
+%    
+    \textbf{B} devono essere attivati al fine di attaviare il nuerone \textbf{C}.
+    \item \textbf{C = A OR B}: Basta che uno dei due neuroni di input, ovvero  
+%
+    \textbf{A} o \textbf{B}, sia attivato per attivare \textbf{C}.
+    \item \textbf{C = A OR NOT B}: Questo caso simula la realta`, ovvero quando 
+%
+    un nuerone (\textbf{C}) viene inibito da un altro (\textbf{B}).
 \\
-Il primo modello di neurone artificiale, create da McCulloch e Pitts, e` in grado di eseguire
-computazioni logiche dato dei segnali di input.
+    In questo caso \textbf{C e` attivo} se \textbf{A e` attivo} e 
+%
+    \textbf{B NON e` attivo}.
+\end{itemize}
+Ora immagina il risultato che puoi ottenere combinando tantissime reti neurali 
+%
+di questo tipo tra loro.
+\newpage
+\subsection{Il Perceptron}
+Il \textbf{Perceptron} e` uno delle architetture di reti neurali  piu` facili.
+\\
+Quest'archittettura e` basata su un altro tipo di neurone artificiale, chiamato 
+%
+\textbf{TLU}(\textbf{Threshold Logic Unit}) o anche chiamato 
+%
+\textbf{LTU}(\textbf{Linear Threshold unit}).
+\\
+L'architettura Perceptron prevede \textbf{un solo layer di neuroni}, a volte 
+%
+anche uno solo.
+\\ 
+In questo tipo di neuroni, \textbf{input} ed \textbf{output} non sono piu` dei 
+%
+semplici vero o falso, ma \textbf{sono dei numeri}.
+\\ 
+Ogni \textbf{input} e` associato ad un \textbf{neurone i-esimo} attraverso un 
+%
+arco pesato di peso \(w_{ji}\) (vedremo i dettagli successivamente).
+\\ 
+Il TLU \textbf{calcola una somma pesata dei due input} (combinazione lineare),
+%
+e successivamente applica una funzione chiamata \textbf{funzione di attivazione}
+%
+per ottenere l'output.
+\\
+Nel caso dei neuroni TLU, la funzione di attivazione prende il nome di 
+
+\textbf{step function}.
 \begin{center}
     \includegraphics[scale=0.4]{images/Neurone_artificiale.png}
 \end{center}
-L'indicatore wtf-per-minute si e` alzato, almeno nella mia testa, quindi cerchiamo
+L'indicatore wtf-per-minute si e` alzato, almeno nella mia testa,
 %
-di svelare il mistero nel geroflifico.
+quindi cerchiamo di svelare il mistero nel geroflifico.
 \\
 Per prima cosa andiamo ad analizzare i vari attore presenti nel disegno superiore:
 \begin{itemize}
@@ -507,9 +644,9 @@ Per prima cosa andiamo ad analizzare i vari attore presenti nel disegno superior
     Nella sommatoria troviamo anche la somma \( w_{0i} \), ovvero il bias utile 
 %
     per tarare.
-    \item \( \mathbf{f()} f) \) e` la \textbf{funzine di attivazione} che determina il 
+    \item \( \mathbf{f()} \) e` la \textbf{funzione di attivazione}  che
 %
-    comportamento di un neurone. 
+    determina il comportamento di un neurone. 
 \\ 
     Esamineremo dopo i dettagli di questa funzione.
 %
@@ -541,13 +678,45 @@ Visto che risulta essere ancora abbastanza completato capiamo il flusso
 %
     prodotto un altro.
 }
-\subsection{Funzione di attivazione}
-Abbiamo osservato come la \textbf{funzione di attivazione} trasforma il livello di 
-eccitazione del neurone in un plausibile output.
-Facciamo un esempio allora:
-\[F(net_i)=\begin{cases}
-    1 \ se\ net_i>soglia \\
-    -1 \ se\ net_i<soglia \\
-\end{cases}\] 
+Un singolo TLU puo` essere usato per una semplice \textbf{classificazione binaria},
+\textbf{separando in modo lineare le due classi in un grafico}.
+\begin{center}
+    \includegraphics[scale=0.5]{images/Separabilita_lineare.png}
+\end{center}
+Esempi di funzioni di attivazione che permettono di separare linearmente due 
+%
+classi sono le seguenti:
+\[
+    headviside(x)=\begin{cases}
+        0\ if\ x < 0\\
+        1\ if\ x > 1
+    \end{cases}
+\]
+\[
+    sgn(x)=\begin{cases}
+        -1\ if\ x < 0\\
+         0\ if\ x = 0\\
+         1\ if\ x > 0\\
+    \end{cases}
+\]
+Come detto, all'inizio, non perforza il modello Perceptron e` costituito da un 
+%
+solo neurone, ma bensi da \textbf{solo layer di neuroni}.
+%
+Un \textbf{layer di neuroni} e` uno insieme di neuroni appartenteni allo stesso 
+%
+livello.
+\\
+Quanto tutti i neuroni di un layer, sono collegati a tutti i neuroni del layer 
+%
+precedente, il layer viene denominato come \textbf{fully connected layer}.
+\\ 
+La domanda da farsi ora e` questa, come faccio a calcolare l'output di un intero
+%
+layer di neuroni senza diventare scemo? 
+\\
+Non farti questa domanda, quando a lezione sara` trattato questo caso 
+%
+lo annotero` negli appunti, altrimenti no.
 \end{document}
  
